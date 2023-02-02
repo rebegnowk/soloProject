@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { render } from 'react-dom';
+// import { Routes, Route } from 'react-router-dom';
 
-// import Characters from './components/Characters';
-// import CustomCharacter from './components/CustomCharacter';
-// import './stylesheets/styles.scss';
+import MainContainer from './containers/MainContainer.jsx';
+
+import './styles.scss';
 
 class App extends Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     return (
       <div>
         <p>hoifrom react</p>
+        <MainContainer />
       </div>
     );
   }
 }
 
+// render(<App />, document.querySelector('#root'));
 export default App;

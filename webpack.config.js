@@ -1,10 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const webpack = require('webpack'); //to access built-in plugins
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   mode: process.env.NODE_ENV,
@@ -15,18 +16,24 @@ module.exports = {
   ],
   devServer: {
     //what does this do
+    port: 8080,
     static: {
       publicPath: '/',
       directory: path.resolve(__dirname, 'build'),
     },
+    // fallback to root for other urls
+    historyApiFallback: true,
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/api**': {
+        target: 'http://localhost:3000',
+        secure: false,
+      },
     },
   },
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /.(js|jsx)$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
