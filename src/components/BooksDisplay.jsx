@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 import Book from './Book.jsx';
 
-class ReadingDisplay extends Component {
+class BooksDisplay extends Component {
   deleteBook() {
     //access db and delete this instance of book
     console.log('pew');
@@ -16,12 +16,11 @@ class ReadingDisplay extends Component {
       books.push(<Book info={element} delete={this.deleteBook} />);
     });
     return (
-      <div>
-        <p>reading books display</p>
+      <div className='booksDisplay'>
         <ul>{books}</ul>
       </div>
     );
   }
 }
 
-export default ReadingDisplay;
+export default BooksDisplay;

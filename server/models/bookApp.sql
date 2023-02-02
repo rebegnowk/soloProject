@@ -88,4 +88,12 @@ INSERT INTO public.books ("_isbn", "title", "author", "year", "total_pages", "ge
 INSERT INTO public.books VALUES (0743437330, 'The Never War', 'D.J. MacHale', 'Pendragon', '2003', 352, 1);
 INSERT INTO public.books ("_isbn", "title", "author", "year", "total_pages", "genre_id") VALUES (0141365471, 'The Witches','"Roald Dahl', '1983', 208, 4);
 
+
+--JOIN TABLE 
+-- SELECT *
+-- FROM public.books_list AS bl
+-- LEFT JOIN public.books AS b ON
+-- bl.book_isbn=b._isbn;
+
+
 --TO UPDATE, NEEDS NEW QUERES

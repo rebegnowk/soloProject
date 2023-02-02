@@ -1,3 +1,15 @@
 body {
-  background-color: pink;
+  background-color: #fbdce2;
+}
+ul {
+  list-style: circle;
+}
+.book-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booksDisplay {
+  height: 50vh;
+  overflow-y: scroll;
 }
