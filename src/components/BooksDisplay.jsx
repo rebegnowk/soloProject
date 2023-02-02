@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+
 import Book from './Book.jsx';
 
 class ReadingDisplay extends Component {
@@ -10,7 +12,7 @@ class ReadingDisplay extends Component {
   render() {
     // console.log(this.props.books);
     const books = [];
-    this.props.books.forEach((element) => {
+    this.props.booksInfo.forEach((element) => {
       books.push(<Book info={element} delete={this.deleteBook} />);
     });
     return (

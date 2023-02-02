@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import CurrentDisplay from '../components/CurrentDisplay.jsx';
 import BooksDisplay from '../components/BooksDisplay.jsx';
@@ -10,14 +10,14 @@ class ReadingContainer extends Component {
   }
 
   render() {
-    // console.log('reading container', this.props.books);
+    console.log('reading container', this.props.booksInfo);
     return (
       <div>
         <p>hi from reading container</p>
         <CurrentDisplay />
-        <BooksDisplay books={this.props.books} />
+        <BooksDisplay booksInfo={this.props.booksInfo} />
       </div>
     );
   }
 }
-export default ReadingContainer;
+export default withRouter(ReadingContainer);
